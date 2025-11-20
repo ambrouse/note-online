@@ -1,0 +1,45 @@
+body {
+  font-size: 18px;
+}
+@media (max-width: 2159px) {
+  body {
+    font-size: 16px;
+  }
+}
+@media (max-width: 1440px) {
+  body {
+    font-size: 14px;
+  }
+}
+@media (max-width: 1040px) {
+  body {
+    font-size: 12px;
+  }
+}
+@media (max-width: 900px) {
+  body {
+    font-size: 10px;
+  }
+}
+
+p {
+  color: white;
+}
+
+.note {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
+  background-color: black;
+}
+.note .note__menu {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  width: 2em;
+  height: 2em;
+  background-color: antiquewhite;
+}
+
+/*# sourceMappingURL=style.css.map */
