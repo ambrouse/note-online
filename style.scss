@@ -24,18 +24,151 @@ p{
     height: 100vh;  
     max-width: 100vw;
     background-color: black;
-    & &__menu{
-        position: absolute;
+    & .note__menu{
+        position: fixed;
         right: 1em;
         top: 1em;
         width: 2em;
         height: 2em;
-        background-color: antiquewhite;
-        & &--button{
-            
+        & .note__menu--button{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            background-color: rgb(71, 71, 71);
+            span{
+                position: absolute;
+                width: 100%;
+                height: .3em;
+                background-color: rgb(255, 255, 255);
+                transition: all .3s ease-in;
+                &:nth-child(1){
+                    top: 0px;
+                }
+                &:nth-child(2){
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+                &:nth-child(3){
+                    bottom: 0px;
+                }
+            }
+        }
+        & .note__menu--main{
+            position: absolute;
+            top: 3em;
+            right: 0px;
+            width: 20em;
+            height: auto;
+            min-height: 50vh;
+            background-color: rgb(71, 71, 71);
+            border-radius: 1em 0em 0em 1em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: start;
+            padding-top: 20px;
+            .main__item{
+                width: 80%;
+                p{
+                    padding: .5em 0px;
+                }
+            }
         }
     }
-    & &__main{
+    & .note__main{
+        // position: absolute;
+
         
+    }
+}
+
+.acctive__span1{
+    animation: button-menu-span1 .2s ease-in forwards;
+}
+.acctive__span2{
+    animation: button-menu-span2 .2s ease-in forwards;
+}
+.acctive__span3{
+    animation: button-menu-span3 .2s ease-in forwards;
+}
+.unacctive__span1{
+    animation: unbutton-menu-span1 .2s ease-in forwards;
+}
+.unacctive__span2{
+    animation: unbutton-menu-span2 .2s ease-in forwards;
+}
+.unacctive__span3{
+    animation: unbutton-menu-span3 .2s ease-in forwards;
+}
+
+@keyframes button-menu-span1 {
+    0% {
+        top: 0px
+    }
+    50%{
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    100% { 
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+    }
+}
+@keyframes unbutton-menu-span1 {
+    0% {
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+    }
+    50%{
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    100% { 
+        top: 0px;
+        transform: none;
+    }
+}
+@keyframes button-menu-span2 {
+    0% {
+        top: 0px
+    }
+    50%{
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    100% { 
+        top: 50%;
+        transform: translateY(-50%) rotate(-45deg);
+    }
+}
+@keyframes unbutton-menu-span2 {
+    0% {
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+    }
+    50%{
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    100% { 
+        bottom: 0px;
+        transform: none;
+    }
+}
+@keyframes button-menu-span3 {
+    0% {
+        display: 1;
+    }
+    100% { 
+        opacity: 0;
+    }
+}
+@keyframes unbutton-menu-span3 {
+    0% {
+        display: 0;
+    }
+    100% { 
+        opacity: 1;
     }
 }
