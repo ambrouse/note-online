@@ -41,7 +41,7 @@ function LoadTxtMenu(main){
     fetch('./menu.txt')
     .then(response => response.text())
     .then(text => {
-        text.split('\r\n').forEach((item)=>{
+        text.split('|').forEach((item)=>{
             const newDiv = document.createElement("div");
             const newP = document.createElement("p");
             newP.textContent = item;
